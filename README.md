@@ -35,7 +35,7 @@ The project is organized into two main directories:
 │       ├── DTOs/              # Data Transfer Objects
 │       ├── Middlewares/       # Custom middleware components
 │       ├── Models/            # Domain entities
-│       └── ProductAPI.Tests/  # Unit tests
+│       └── ProductAPI.Test/  # Unit tests
 │
 └── frontend/
     ├── app/                   # Next.js app directory
@@ -133,6 +133,6 @@ The API provides the following endpoints:
 To run the backend tests:
 
 ```bash
-cd backend/ProductAPI.Tests
+cd backend/ProductAPI.Test
 dotnet test
 ```
