@@ -1,8 +1,5 @@
 # Product-Manager
 A simple REST API with frontend
-# Product Management System
-
-A full-stack web application for managing product inventory. This system allows you to create, view, and browse products.
 
 ## Features
 
