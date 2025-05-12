@@ -15,8 +15,20 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        policy => policy
+            .WithOrigins("http://localhost:3000")
+            .WithHeaders("Content-Type")
+            .WithMethods("GET", "POST")
+            .SetIsOriginAllowedToAllowWildcardSubdomains()
+            .SetPreflightMaxAge(TimeSpan.FromMinutes(3)));
+});
+
 var app = builder.Build();
 
+app.UseCors("CorsPolicy");
 app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
